@@ -2,15 +2,15 @@ import React from 'react'
 
 export default function NewsLetter() {
   return (
-    <div class="container">
-    <div class="row">
-      <div class="col-md-3"></div>
-      <div class="col-md-6">
-        <div class="newsletter_wrapper">
-          <div class="newsletter-inner_wrapper">
+    <div className="container">
+    <div className="row">
+      <div className="col-md-3"></div>
+      <div className="col-md-6">
+        <div className="newsletter_wrapper">
+          <div className="newsletter-inner_wrapper">
             <h4>
-              <span class="stay-touch">Stay in touch to</span>
-              <span class="offers">Get Exlusive Offers</span>
+              <span className="stay-touch">Stay in touch to</span>
+              <span className="offers">Get Exlusive Offers</span>
             </h4>
             <form id="mc-newsletter" action="#" className="newsletterForm">
               <div className="input-group">
@@ -32,7 +32,7 @@ export default function NewsLetter() {
           </div>
         </div>
       </div>
-      <div class="col-md-3"></div>
+      <div className="col-md-3"></div>
     </div>
   </div>
   )

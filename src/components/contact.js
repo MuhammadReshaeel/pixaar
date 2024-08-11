@@ -3,49 +3,49 @@ import React from 'react'
 export default function Contact() {
   return (
     <div>
-        <div class="mt_heading">
-          <h2 class="section_heading text-center"><span>Contact Us</span></h2>
-          <p class="heading_txt text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi </p>
+        <div className="mt_heading">
+          <h2 className="section_heading text-center"><span>Contact Us</span></h2>
+          <p className="heading_txt text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi </p>
         </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="contact_info">
-                <div class="contact_heading">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6">
+              <div className="contact_info">
+                <div className="contact_heading">
                   <span>Get in Touch</span>
                   <h3>Contact info</h3>
                 </div>
-                <div class="email_sec">
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <div class="location">
-                        <i class="icon-map"></i>
+                <div className="email_sec">
+                  <div className="row">
+                    <div className="col-sm-6">
+                      <div className="location">
+                        <i className="icon-map"></i>
                         <h5>Location</h5>
                         <p>21, Lakewood street,London</p>
                       </div>
                     </div>
-                    <div class="col-sm-6">
-                      <div class="time">
-                        <i class="icon-alarmclock"></i>
+                    <div className="col-sm-6">
+                      <div className="time">
+                        <i className="icon-alarmclock"></i>
                         <h5>Available Time</h5>
                         <p>Monday - Saturday</p>
                         <p>9:00am - 8:00pm</p>
                       </div>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <div class="location">
-                        <i class="icon-phone"></i>
-                        <div class="phone">
+                  <div className="row">
+                    <div className="col-sm-6">
+                      <div className="location">
+                        <i className="icon-phone"></i>
+                        <div className="phone">
                           <h5>Phone</h5>
                           <p>+92-123456-458</p>
                         </div>
                       </div>
                     </div>
-                    <div class="col-sm-6">
-                      <div class="email">
-                        <i class="icon-envelope"></i>
+                    <div className="col-sm-6">
+                      <div className="email">
+                        <i className="icon-envelope"></i>
                         <h5>Email</h5>
                         <p><a href="mailto:example@example.co">example@example.co</a></p>
                       </div>
@@ -54,7 +54,7 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-            <div class="col-md-6">
+            <div className="col-md-6">
               <div className="contact_form">
                 <h3>Stay in Touch</h3>
                 <form id="contact_form">

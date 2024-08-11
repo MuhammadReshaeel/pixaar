@@ -2,26 +2,26 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 export default function Header({ activeSection }) {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const router = useRouter();
+  const [isScrolled, setIsScrolled] = useState(false); // State to track whether the user has scrolled down
+  const router = useRouter(); // Next.js router for navigation and query handling
   
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      // Update isScrolled state based on the window's scroll position
+      setIsScrolled(window.scrollY > 50);
     };
 
+    // Add scroll event listener when the component mounts
     window.addEventListener('scroll', handleScroll);
 
+    // Cleanup the event listener when the component unmounts
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   const handleScroll = (id) => {
+    // Smoothly scroll to the section if already on the homepage
     if (router.pathname === '/') {
       const element = document.getElementById(id);
       if (element) {
@@ -33,7 +33,7 @@ export default function Header({ activeSection }) {
         console.error(`Element with ID ${id} not found.`);
       }
     } else {
-      // Navigate to the home page and include the scrollTo parameter in the query
+      // If not on the homepage, navigate to it and pass the scrollTo ID in the query
       router.push({
         pathname: '/',
         query: { scrollTo: id }
@@ -42,7 +42,7 @@ export default function Header({ activeSection }) {
   };
 
   useEffect(() => {
-    // Check if we're on the home page and there's a scrollTo parameter
+    // On the homepage, scroll to the section specified by the scrollTo query parameter
     if (router.pathname === '/' && router.query.scrollTo) {
       const element = document.getElementById(router.query.scrollTo);
       if (element) {
@@ -50,7 +50,7 @@ export default function Header({ activeSection }) {
           behavior: 'smooth',
           block: 'start',
         });
-        // Clear the scrollTo query parameter after scrolling
+        // Remove the scrollTo parameter from the URL after scrolling
         router.replace('/', '', { shallow: true });
       }
     }
@@ -72,6 +72,7 @@ export default function Header({ activeSection }) {
                       <span className="icon-bar"></span>
                     </button>
                     <div className="logo">
+                      {/* Scroll to top when the logo is clicked */}
                       <a href="#top" onClick={() => handleScroll('top')}>
                         <img className="no_sticky_logo" src="/images/logo.png" alt="Logo" />
                         <img className="sticky_logo" src="/images/logo-color.png" alt="Logo" />
@@ -80,6 +81,7 @@ export default function Header({ activeSection }) {
                   </div>
                   <div className="navbar-collapse collapse">
                     <ul className="nav navbar-nav navbar-right">
+                      {/* Navigation menu items with active section highlighting */}
                       <li className={activeSection === 'top' ? 'active' : ''}>
                         <a className='pointer-hover' onClick={() => handleScroll('top')}>Home</a>
                       </li>

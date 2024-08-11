@@ -39,110 +39,104 @@ export default function Home() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
+    handleScroll(); // Initial check when component mounts
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   return (
     <>
-      {/* <!-- PRELOADER --> */}
+      {/* Preloader: Displayed while content is loading */}
       <Loader />
-      {/* <!-- End Preloader --> */}
+      {/* End Preloader */}
 
-
+      {/* Scroll Top Anchor: Allows smooth scrolling back to top */}
       <div id="top"></div>
 
-      {/* <!-- Header --> */}
+      {/* Header: Navigation bar with active section highlighting */}
       <Header activeSection={activeSection} />
-      {/* <!--End Header-->*/}
+      {/* End Header */}
 
-
-      {/*<!--Banner--> */}
-      < section id="rt_banner" >
+      {/* Banner Section: Introductory banner */}
+      <section id="rt_banner">
         <Banner />
-      </section >
-      {/* <!--End	Banner--> */}
+      </section>
+      {/* End Banner Section */}
 
-
-      {/*<!--Services--> */}
-      < section id="rt_services" >
+      {/* Services Section: Overview of services offered */}
+      <section id="rt_services">
         <Services />
-      </section >
-      {/* <!--End Services-->*/}
+      </section>
+      {/* End Services Section */}
 
-      {/*  <!--Work--> */}
-      < section id="rt_how_it_works" >
+      {/* How It Works Section: Explanation of the process or workflow */}
+      <section id="rt_how_it_works">
         <HowItWorks />
-      </section >
-      {/* <!--End	Work--> */}
+      </section>
+      {/* End How It Works Section */}
 
-      {/*<!--Features--> */}
-      < section id="rt_features" >
+      {/* Features Section: Highlights key features */}
+      <section id="rt_features">
         <Features />
-      </section >
-      {/* <!--=========================*
-           End Features
-*===========================-->
+      </section>
+      {/* End Features Section */}
 
-<!--=========================*
-          ScreenShots
-*===========================--> */}
+      {/* Screenshots Section: Displays product or service screenshots */}
       <section id="rt_screenshots">
         <Screenshots />
       </section>
 
+      {/* Team Section: Introduces the team members */}
       <section id="rt_team">
         <Teams />
       </section>
 
-      {/* <!--Watch Section--> */}
-      < section id="rt_watch" style={{
+      {/* Watch Section: Video content, with a background image */}
+      <section id="rt_watch" style={{
         background: 'url(/images/work_bg.jpg)',
         backgroundSize: 'cover',
         backgroundAttachment: 'fixed',
         backgroundRepeat: 'no-repeat'
-      }} >
-       <Watch/>
-      </section >
+      }}>
+        <Watch />
+      </section>
 
-      {/* <!--Testimonial */}
-  <section id="rt_testimonial">
+      {/* Testimonials Section: Customer testimonials or reviews */}
+      <section id="rt_testimonial">
         <Testimonials />
       </section>
-  
 
- {/*<!--Fun And Facts--> */}
-  <section id="mt_fun">
-      <FunFacts />
-  </section>
+      {/* Fun Facts Section: Displays fun statistics or facts */}
+      <section id="mt_fun">
+        <FunFacts />
+      </section>
 
-      {/*<!--Pricing --> */}
-      < section id="rt_pricing" >
-        <Pricing/>
-      </section >
+      {/* Pricing Section: Details pricing plans */}
+      <section id="rt_pricing">
+        <Pricing />
+      </section>
 
-      {/*<!--Blog--> */}
-      < section id="rt_blog" >
+      {/* Blog Section: Showcases recent blog posts */}
+      <section id="rt_blog">
         <Blog />
-      </section >
+      </section>
 
-      {/*<!--Contact-> */}
-      < section id="rt_contact" >
+      {/* Contact Section: Contact form or information */}
+      <section id="rt_contact">
         <Contact />
-      </section >
+      </section>
 
-      {/*<!--Get App--> */}
-      < section id="rt_get_app" style={{
+      {/* Get App Section: Call to action to download an app, with a background image */}
+      <section id="rt_get_app" style={{
         background: 'url(/images/feature/get-bg.jpg)'
-      }} >
+      }}>
         <GetApp />
-      </section >
+      </section>
 
-      < section id="newsletter" >
+      {/* Newsletter Section: Signup for newsletters */}
+      <section id="newsletter">
         <NewsLetter />
-      </section >
-
-
+      </section>
     </>
   );
 }

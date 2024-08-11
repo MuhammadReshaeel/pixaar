@@ -1,17 +1,20 @@
-import React from 'react'
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function Features() {
-    const [inView, setInView] = useState(false);
+  // State to track if the image in the center column is in view
+  const [inView, setInView] = useState(false);
+
+  // Reference to the image element
   const imgRef = useRef(null);
 
   useEffect(() => {
+    // Intersection Observer to detect when the image is in view
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setInView(true);
-          observer.unobserve(entry.target); // Unobserve after the first trigger
+          setInView(true); // Trigger animation when in view
+          observer.unobserve(entry.target); // Stop observing after first trigger
         }
       },
       { threshold: 0.3 } // Trigger when 30% of the image is visible
@@ -21,6 +24,7 @@ export default function Features() {
       observer.observe(imgRef.current);
     }
 
+    // Cleanup function to unobserve the image when the component is unmounted
     return () => {
       if (imgRef.current) {
         observer.unobserve(imgRef.current);

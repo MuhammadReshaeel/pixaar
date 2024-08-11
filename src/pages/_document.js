@@ -16,6 +16,8 @@ export default function Document() {
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.default.min.css"
           />
+          <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet"/>
+
         </Head>
         <body>
           <Main />

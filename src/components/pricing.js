@@ -2,26 +2,26 @@ import React from 'react'
 
 export default function Pricing() {
   return (
-    <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="mt_heading">
-          <h2 class="section_heading text-center"><span>Pricing</span></h2>
-          <p class="heading_txt text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi </p>
+    <div className="container">
+    <div className="row">
+      <div className="col-md-12">
+        <div className="mt_heading">
+          <h2 className="section_heading text-center"><span>Pricing</span></h2>
+          <p className="heading_txt text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi </p>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="main_pricing_conatiner">
-          <div class="price">
+      <div className="col-md-4">
+        <div className="main_pricing_conatiner">
+          <div className="price">
             <h2>
-              <span class="price_icon">
-                <i class="icon-wallet"></i>
+              <span className="price_icon">
+                <i className="icon-wallet"></i>
               </span>Standard</h2>
-            <span class="price_tag">
-              <span class="currency">$</span>0</span>
-            <span class="per_month">/Month</span>
+            <span className="price_tag">
+              <span className="currency">$</span>0</span>
+            <span className="per_month">/Month</span>
           </div>
-          <div class="price_listing">
+          <div className="price_listing">
             <ul>
               <li>Latin words, consectetur.</li>
               <li>All the Lorem Ipsum.</li>
@@ -30,23 +30,23 @@ export default function Pricing() {
               <li>Nor again is there anyone.</li>
             </ul>
           </div>
-          <div class="choose_plan_btn">
-            <a href="#" class="rt_btn_color">CHOOSE PLAN</a>
+          <div className="choose_plan_btn">
+            <a href="#" className="rt_btn_color">CHOOSE PLAN</a>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="main_pricing_conatiner highlight_pricing">
-          <div class="price">
+      <div className="col-md-4">
+        <div className="main_pricing_conatiner highlight_pricing">
+          <div className="price">
             <h2>
-              <span class="price_icon">
-                <i class="icon-briefcase"></i>
+              <span className="price_icon">
+                <i className="icon-briefcase"></i>
               </span>Bussiness</h2>
-            <span class="price_tag">
-              <span class="currency">$</span>90</span>
-            <span class="per_month">/Month</span>
+            <span className="price_tag">
+              <span className="currency">$</span>90</span>
+            <span className="per_month">/Month</span>
           </div>
-          <div class="price_listing">
+          <div className="price_listing">
             <ul>
               <li>Latin words, consectetur.</li>
               <li>All the Lorem Ipsum.</li>
@@ -55,23 +55,23 @@ export default function Pricing() {
               <li>Nor again is there anyone.</li>
             </ul>
           </div>
-          <div class="choose_plan_btn">
-            <a href="#" class="rt_btn_white">CHOOSE PLAN</a>
+          <div className="choose_plan_btn">
+            <a href="#" className="rt_btn_white">CHOOSE PLAN</a>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="main_pricing_conatiner">
-          <div class="price">
+      <div className="col-md-4">
+        <div className="main_pricing_conatiner">
+          <div className="price">
             <h2>
-              <span class="price_icon">
-                <i class="icon-genius"></i>
+              <span className="price_icon">
+                <i className="icon-genius"></i>
               </span>Enterprise</h2>
-            <span class="price_tag">
-              <span class="currency">$</span>120</span>
-            <span class="per_month">/Month</span>
+            <span className="price_tag">
+              <span className="currency">$</span>120</span>
+            <span className="per_month">/Month</span>
           </div>
-          <div class="price_listing">
+          <div className="price_listing">
             <ul>
               <li>Latin words, consectetur.</li>
               <li>All the Lorem Ipsum.</li>
@@ -80,8 +80,8 @@ export default function Pricing() {
               <li>Nor again is there anyone.</li>
             </ul>
           </div>
-          <div class="choose_plan_btn">
-            <a href="#" class="rt_btn_color">CHOOSE PLAN</a>
+          <div className="choose_plan_btn">
+            <a href="#" className="rt_btn_color">CHOOSE PLAN</a>
           </div>
         </div>
       </div>
