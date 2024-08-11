@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function Banner() {
   return (
-    <div>
+    <>
       {/* Main container for the banner */}
       <div className="container">
         <div className="row">
@@ -56,6 +56,6 @@ export default function Banner() {
           ></path>
         </svg>
       </div>
-    </div>
+    </>
   );
 }

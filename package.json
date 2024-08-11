@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.1",
     "font-awesome": "^4.7.0",
     "framer-motion": "^11.3.24",
     "ionicons": "^7.4.0",
