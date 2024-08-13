@@ -2,41 +2,54 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from 'framer-motion';
 
 export default function HowItWorks() {
-  // State to track if the image is in view
   const [inView, setInView] = useState(false);
-  
-  // Reference to the image element
+  const [isDesktop, setIsDesktop] = useState(true); // State to track if the view is desktop
+
   const imgRef = useRef(null);
 
   useEffect(() => {
-    // Intersection Observer to detect when the image is in view
+    // Function to check if the screen is desktop size
+    const checkIsDesktop = () => {
+      setIsDesktop(window.innerWidth >= 768); // Set breakpoint for desktop, e.g., 768px
+    };
+
+    // Run the check on component mount and window resize
+    checkIsDesktop();
+    window.addEventListener('resize', checkIsDesktop);
+
+    return () => {
+      window.removeEventListener('resize', checkIsDesktop);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isDesktop) return; // Skip the observer if not on desktop view
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setInView(true);
-          observer.unobserve(entry.target); // Stop observing after the first trigger
+          observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.3 } // Trigger when 30% of the image is visible
+      { threshold: 0.3 }
     );
 
     if (imgRef.current) {
       observer.observe(imgRef.current);
     }
 
-    // Cleanup function to unobserve the image when the component is unmounted
     return () => {
       if (imgRef.current) {
         observer.unobserve(imgRef.current);
       }
     };
-  }, []);
+  }, [isDesktop]);
 
   return (
     <div>
       <div className="container">
         <div className="row">
-          {/* Section heading */}
           <div className="mt_heading">
             <h2 className="section_heading text-center"><span>How it Works</span></h2>
             <p className="heading_txt text-center">
@@ -44,7 +57,6 @@ export default function HowItWorks() {
             </p>
           </div>
 
-          {/* Description column */}
           <div className="col-md-7 work_description">
             <h3>What you get in this landing page!</h3>
             <p>
@@ -59,16 +71,22 @@ export default function HowItWorks() {
             </ul>
           </div>
 
-          {/* Image column with animation */}
           <div className="col-md-5 text-center">
-            <motion.img
-              ref={imgRef}
-              src="/images/work/work-mobile.png"
-              alt="How it works"
-              initial={{ opacity: 0, x: 100 }} // Initial animation state
-              animate={inView ? { opacity: 1, x: 0 } : {}} // Animate when in view
-              transition={{ duration: 1, delay: 0.3 }} // Animation timing
-            />
+            {isDesktop ? (
+              <motion.img
+                ref={imgRef}
+                src="/images/work/work-mobile.png"
+                alt="How it works"
+                initial={{ opacity: 0, x: 100 }}
+                animate={inView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 1, delay: 0.3 }}
+              />
+            ) : (
+              <img
+                src="/images/work/work-mobile.png"
+                alt="How it works"
+              />
+            )}
           </div>
         </div>
       </div>
